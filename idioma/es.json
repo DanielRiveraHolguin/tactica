@@ -1,0 +1,13 @@
+{
+  "rendimientomotor": {
+    "selectorFechas":"Defina rango de búsqueda",
+    "lblUnidad":"Especifique Vehiculo"
+  }
+  ,
+  "botones":{
+    "aplicar":"Aplicar",
+    "cancelar":"Cancelar",
+    "guardar":"Guardar",
+    "aceptar":"Aceptar"
+  }
+}
