@@ -24,19 +24,19 @@ $(document).ready(function(){
           chart2.draw(data2);
         }
 
-  $("#menu-reportes li").click(function(){
+  $("#GerencialTactica-menu-reportes li").click(function(){
     var text=$(this).text();
     $("#titulo-menu-reportes").html(text);
   });
 
-  $( "#sortable-list" ).sortable();
+  $( "#GerencialTactica-sortable-list" ).sortable();
 
   $(window).scroll(function(){
-    $("#right-side").stop().animate({"marginTop": ($(window).scrollTop()) + "px", "marginLeft":($(window).scrollLeft()) + "px"}, "slow" );
+    $("#GerencialTactica-right-side").stop().animate({"marginTop": ($(window).scrollTop()) + "px", "marginLeft":($(window).scrollLeft()) + "px"}, "slow" );
   });
 
-  $("#navegacion a").click(function(){
-    $("#navegacion a").removeClass("active");
+  $("#GerencialTactica-navegacion a").click(function(){
+    $("#GerencialTactica-navegacion a").removeClass("active");
     $(this).addClass("active");
   });
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
     });         
   });
 
-    $("#inpvehiculo").change(function(){
+    $("#GerencialTactica-inpvehiculo").change(function(){
       $("[for='lblAutosSeleccionadas']").html($("#inpvehiculo").val());
     });
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
 
     var cb = function(start, end, label) {
       console.log(start.toISOString(), end.toISOString(), label);
-      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      $('#GerencialTactica-reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
       //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
     }
 
@@ -120,13 +120,13 @@ $(document).ready(function(){
       }
     };
 
-    $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+    $('#GerencialTactica-reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
 
-    $('#reportrange').daterangepicker(optionSet1, cb);
+    $('#GerencialTactica-reportrange').daterangepicker(optionSet1, cb);
 
-    $('#reportrange').on('show.daterangepicker', function() { console.log("show event fired"); });
-    $('#reportrange').on('hide.daterangepicker', function() { console.log("hide event fired"); });
-    $('#reportrange').on('apply.daterangepicker', function(ev, picker) { 
+    $('#GerencialTactica-reportrange').on('show.daterangepicker', function() { console.log("show event fired"); });
+    $('#GerencialTactica-reportrange').on('hide.daterangepicker', function() { console.log("hide event fired"); });
+    $('#GerencialTactica-reportrange').on('apply.daterangepicker', function(ev, picker) { 
      $("[for='lblFechasSeleccionadas']").html(picker.startDate.format('MMMM D, YYYY')                      + " to " 
         + picker.endDate.format('MMMM D, YYYY'));
 
@@ -136,10 +136,10 @@ $(document).ready(function(){
         + picker.endDate.format('MMMM D, YYYY')
       ); 
     });
-    $('#reportrange').on('cancel.daterangepicker', function(ev, picker) { console.log("cancel event fired"); });
+    $('#GerencialTactica-reportrange').on('cancel.daterangepicker', function(ev, picker) { console.log("cancel event fired"); });
 
-    $('#options1').click(function() {
-      $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+    $('#GerencialTactica-options1').click(function() {
+      $('#GerencialTactica-reportrange').data('daterangepicker').setOptions(optionSet1, cb);
     });
     
 
