@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   alert("cargado");
+
   google.load("visualization", "1", {packages:["corechart"]});
         google.setOnLoadCallback(drawChart);
         function drawChart() {
