@@ -17,8 +17,8 @@ $(document).ready(function(){
           ]);
 
 
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-          var chart2 = new google.visualization.PieChart(document.getElementById('piechartcomb'));
+          var chart = new google.visualization.PieChart(document.getElementById('GerencialTactica-piechart'));
+          var chart2 = new google.visualization.PieChart(document.getElementById('GerencialTactica-piechartcomb'));
 
           chart.draw(data);
           chart2.draw(data2);
@@ -120,13 +120,13 @@ $(document).ready(function(){
       }
     };
 
-    $('#GerencialTactica-reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+    $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
 
-    $('#GerencialTactica-reportrange').daterangepicker(optionSet1, cb);
+    $('#reportrange').daterangepicker(optionSet1, cb);
 
-    $('#GerencialTactica-reportrange').on('show.daterangepicker', function() { console.log("show event fired"); });
-    $('#GerencialTactica-reportrange').on('hide.daterangepicker', function() { console.log("hide event fired"); });
-    $('#GerencialTactica-reportrange').on('apply.daterangepicker', function(ev, picker) { 
+    $('#reportrange').on('show.daterangepicker', function() { console.log("show event fired"); });
+    $('#reportrange').on('hide.daterangepicker', function() { console.log("hide event fired"); });
+    $('#reportrange').on('apply.daterangepicker', function(ev, picker) { 
      $("[for='lblFechasSeleccionadas']").html(picker.startDate.format('MMMM D, YYYY')                      + " to " 
         + picker.endDate.format('MMMM D, YYYY'));
 
@@ -136,10 +136,10 @@ $(document).ready(function(){
         + picker.endDate.format('MMMM D, YYYY')
       ); 
     });
-    $('#GerencialTactica-reportrange').on('cancel.daterangepicker', function(ev, picker) { console.log("cancel event fired"); });
+    $('#reportrange').on('cancel.daterangepicker', function(ev, picker) { console.log("cancel event fired"); });
 
-    $('#GerencialTactica-options1').click(function() {
-      $('#GerencialTactica-reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+    $('#options1').click(function() {
+      $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
     });
     
 
