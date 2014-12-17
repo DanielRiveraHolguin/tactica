@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+   alert("cargado");
   google.load("visualization", "1", {packages:["corechart"]});
         google.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -17,26 +17,26 @@ $(document).ready(function(){
           ]);
 
 
-          var chart = new google.visualization.PieChart(document.getElementById('GerencialTactica-piechart'));
-          var chart2 = new google.visualization.PieChart(document.getElementById('GerencialTactica-piechartcomb'));
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          var chart2 = new google.visualization.PieChart(document.getElementById('piechartcomb'));
 
           chart.draw(data);
           chart2.draw(data2);
         }
 
-  $("#GerencialTactica-menu-reportes li").click(function(){
+  $("#menu-reportes li").click(function(){
     var text=$(this).text();
     $("#titulo-menu-reportes").html(text);
   });
 
-  $( "#GerencialTactica-sortable-list" ).sortable();
+  $( "#sortable-list" ).sortable();
 
   $(window).scroll(function(){
-    $("#GerencialTactica-right-side").stop().animate({"marginTop": ($(window).scrollTop()) + "px", "marginLeft":($(window).scrollLeft()) + "px"}, "slow" );
+    $("#right-side").stop().animate({"marginTop": ($(window).scrollTop()) + "px", "marginLeft":($(window).scrollLeft()) + "px"}, "slow" );
   });
 
-  $("#GerencialTactica-navegacion a").click(function(){
-    $("#GerencialTactica-navegacion a").removeClass("active");
+  $("#navegacion a").click(function(){
+    $("#navegacion a").removeClass("active");
     $(this).addClass("active");
   });
 
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
 
   var modulo="rendimientomotor";
-  $.getJSON( "https://rawgit.com/DanielRiveraHolguin/tactica/master/idioma/es.json", function( data ) {
+  $.getJSON( "idioma/es.json", function( data ) {
 
     $.each( data, function( key, val ) {
         
@@ -71,7 +71,7 @@ $(document).ready(function(){
     });         
   });
 
-    $("#GerencialTactica-inpvehiculo").change(function(){
+    $("#inpvehiculo").change(function(){
       $("[for='lblAutosSeleccionadas']").html($("#inpvehiculo").val());
     });
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
 
     var cb = function(start, end, label) {
       console.log(start.toISOString(), end.toISOString(), label);
-      $('#GerencialTactica-reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
       //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
     }
 
@@ -144,4 +144,4 @@ $(document).ready(function(){
     
 
 });
-                
+               
