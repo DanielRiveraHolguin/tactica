@@ -57,7 +57,7 @@ $(document).ready(function(){
 
 
   var modulo="rendimientomotor";
-  $.getJSON( "idioma/es.json", function( data ) {
+  $.getJSON( "https://rawgit.com/DanielRiveraHolguin/tactica/master/idioma/es.json", function( data ) {
 
     $.each( data, function( key, val ) {
         
